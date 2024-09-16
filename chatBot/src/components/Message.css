@@ -1,0 +1,20 @@
+.message.user {
+    align-self: flex-end;
+    background-color: #0036f9;
+    color: white;
+  }
+  
+  .message.bot {
+    align-self: flex-start;
+    background-color: #ff6f00;
+    color: white;
+  }
+  
+  .messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto; /* Enable vertical scrolling */
+    display: flex;
+    flex-direction: column;
+  }
+  
