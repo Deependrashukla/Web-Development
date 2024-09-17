@@ -20,7 +20,7 @@ const MessageInput = ({ onSubmit }) => {
         value={input} 
         onChange={(e) => setInput(e.target.value)} 
       />
-      <button type="submit">Send</button>
+      {input.length > 0 && (<button type="submit">Send</button>)}
     </form>
   );
 };
