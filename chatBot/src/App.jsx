@@ -70,15 +70,18 @@ function App() {
 
   return (
     <div className="chat-container">
-      <div className="chat-window">
-        {/* MessageList renders all the messages */}
-        <MessageList messages={messages} />
 
+      <div className='left-container'>
         {/* TransformationSelector allows the user to pick a transformation */}
         <TransformationSelector
           selected={selectedTransformation}
           onSelect={setSelectedTransformation}
         />
+      </div>
+
+      <div className="chat-window">
+        {/* MessageList renders all the messages */}
+        <MessageList messages={messages} />
 
         {/* MessageInput handles the input and message submission */}
         <MessageInput onSubmit={handleSendMessage} />

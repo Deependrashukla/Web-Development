@@ -3,7 +3,7 @@ import React from 'react';
 function TransformationSelector({ selected, onSelect }) {
   return (
     <div className="transformation-selector">
-      <label htmlFor="transformation">Choose a transformation:</label>
+      <label htmlFor="transformation" style={{color: 'white', fontFamily: '-moz-initial2d', margin:'10px'}}>Choose a transformation:</label>
       <select
         id="transformation"
         value={selected}
