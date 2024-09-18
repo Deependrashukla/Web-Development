@@ -2,89 +2,73 @@ import React, { useState } from 'react';
 import './App.css';
 import MessageList from './components/MessageList';
 import MessageInput from './components/MessageInput';
-import TransformationSelector from './components/TransformationSelector'; // New component for transformation selection
+import TransformationSelector from './components/TransformationSelector';
+import { reverseText, addUnderscores, repeatText, capitalizeFirstLetter, capitalizeText } from './components/TextFeatures';
 
 function App() {
-  const [messages, setMessages] = useState([]);
-  const [selectedTransformation, setSelectedTransformation] = useState('none');
+  const [conversations, setConversations] = useState({});
+  const [activeProfile, setActiveProfile] = useState(null);
 
   // Handle message submission from MessageInput
   const handleSendMessage = (input) => {
+    if (!activeProfile) return; // Do nothing if no profile is selected
+
     const userMessage = { sender: 'user', text: input };
-    
-    setMessages((prevMessages) => [...prevMessages, userMessage]);
-    
-    setTimeout(() => {
-      const botMessage = {sender:'bot', text:applyTransformation(input)};
-      setMessages((prevMessages) => [...prevMessages, botMessage])
-    },1000);
+
+    setConversations((prevConversations) => {
+      const updatedConversations = {
+        ...prevConversations,
+        [activeProfile]: [...(prevConversations[activeProfile] || []), userMessage],
+      };
+
+      // Simulate bot response after a delay
+      setTimeout(() => {
+        const transformationFunction = getTransformationFunction(activeProfile);
+        const botMessage = { sender: 'bot', text: transformationFunction(input) };
+        setConversations((prev) => ({
+          ...prev,
+          [activeProfile]: [...(prev[activeProfile] || []), userMessage, botMessage],
+        }));
+      }, 1000);
+
+      return updatedConversations;
+    });
   };
 
-  // Apply the selected transformation
-  const applyTransformation = (text) => {
-    switch (selectedTransformation) {
-      case 'reverse':
-        return reverseText(text);
-      case 'add_underscores':
-        return addUnderscores(text);
-      case 'repeat':
-        return repeatText(text);
-      case 'first_letter_capitalize':
-        return capitalizeFirstLetter(text);
-      case 'uppercase':
-        return capitalizeText(text);
+  // Retrieve the transformation function for the active profile
+  const getTransformationFunction = (profileName) => {
+    switch (profileName) {
+      case 'Shadab':
+        return reverseText;
+      case 'Deependra':
+        return addUnderscores;
+      case 'Ankita':
+        return repeatText;
+      case 'Animesh':
+        return capitalizeFirstLetter;
+      case 'Anmol':
+        return capitalizeText;
       default:
-        return text; // No transformation applied
+        return (text) => text; // Default: No transformation
     }
-  };
-
-  // Simple text transformation: reverse the message
-  const reverseText = (text) => {
-    return text.split('').reverse().join('');
-  };
-
-  const addUnderscores = (text) => {
-    return text.replace(/ /g, '_');
-  };
-
-  // Text transformation: Repeat each word twice
-  const repeatText = (text) => {
-    return text
-      .split(' ')
-      .map(word => `${word} ${word}`)
-      .join(' ');
-  };
-
-  // Text transformation: Capitalize the first letter of each word
-  const capitalizeFirstLetter = (text) => {
-    return text
-      .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
-  };
-
-  // Text transformation: Convert text to uppercase
-  const capitalizeText = (text) => {
-    return text.toUpperCase();
   };
 
   return (
     <div className="chat-container">
-
       <div className='left-container'>
-        {/* TransformationSelector allows the user to pick a transformation */}
         <TransformationSelector
-          selected={selectedTransformation}
-          onSelect={setSelectedTransformation}
+          setActiveProfile={setActiveProfile}
+          setMessages={setConversations}
         />
       </div>
 
       <div className="chat-window">
-        {/* MessageList renders all the messages */}
-        <MessageList messages={messages} />
-
-        {/* MessageInput handles the input and message submission */}
-        <MessageInput onSubmit={handleSendMessage} />
+        {activeProfile && (
+          <>
+            <MessageList messages={conversations[activeProfile] || []} />
+            <MessageInput onSubmit={handleSendMessage} />
+          </>
+        )}
       </div>
     </div>
   );
