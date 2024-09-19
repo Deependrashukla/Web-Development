@@ -1,18 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ChatProfile.css'; // Import the CSS file
 
-const ChatProfile = ({ name, pictureUrl, onClick, lastMessage }) => {
-  const [isSelected, setIsSelected] = useState(false);
-
-  const handleClick = () => {
-    setIsSelected(!isSelected); // Toggle the selected state
-    onClick(); // Call the function passed as a prop
-  };
-
+const ChatProfile = ({ name, pictureUrl, onClick, lastMessage, isSelected }) => {
   return (
     <div
-      className={`chat-profile ${isSelected ? 'selected' : ''}`}
-      onClick={handleClick}
+      className={`chat-profile ${isSelected ? 'selected' : ''}`} // Add 'selected' class when profile is active
+      onClick={onClick}
     >
       <img src={pictureUrl} alt={`${name}'s profile`} />
       <div>

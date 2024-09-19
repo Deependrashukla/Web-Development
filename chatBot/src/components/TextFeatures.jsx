@@ -29,3 +29,13 @@ export const capitalizeFirstLetter = (text) => {
 export const capitalizeText = (text) => {
   return text.toUpperCase();
 };
+
+
+export const randomTransformations = (text) => {
+  const transformationFunctions = [reverseText, addUnderscores, repeatText, capitalizeFirstLetter, capitalizeText];
+  const randomIndex = Math.floor(Math.random() * transformationFunctions.length);
+  return transformationFunctions[randomIndex](text); // Apply a random transformation
+};
+
+
+

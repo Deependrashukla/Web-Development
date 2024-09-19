@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     padding: 10px;
-    background-color: white;
+    background-color: rgb(255, 255, 255); /* Default white background */
     cursor: pointer;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -10,8 +10,12 @@
     transition: background-color 0.3s ease;
   }
   
+  .chat-profile:hover {
+    background-color: #c5b9b9; /* Light gray on hover */
+  }
+  
   .chat-profile.selected {
-    background-color: green;
+    background-color: rgba(208, 202, 202, 0.895); /* Red tone when selected */
   }
   
   .chat-profile img {

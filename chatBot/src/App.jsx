@@ -3,11 +3,22 @@ import './App.css';
 import MessageList from './components/MessageList';
 import MessageInput from './components/MessageInput';
 import TransformationSelector from './components/TransformationSelector';
-import { reverseText, addUnderscores, repeatText, capitalizeFirstLetter, capitalizeText } from './components/TextFeatures';
+import { reverseText, addUnderscores, repeatText, capitalizeFirstLetter, capitalizeText, randomTransformations } from './components/TextFeatures';
+
+// Name of each bot correspoding to their functioality.
+const transformations = {
+  reverseText: 'Reverse Text',
+  addUnderscores:'AddUnder Scores',
+  repeatText: 'Repeat Text',
+  capitalizeFirstLetter: 'Capitalize First Letter',
+  capitalizeText: 'Capitalize Text'
+}
 
 function App() {
+
   const [conversations, setConversations] = useState({});
   const [activeProfile, setActiveProfile] = useState(null);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   // Handle message submission from MessageInput
   const handleSendMessage = (input) => {
@@ -22,6 +33,7 @@ function App() {
         [activeProfile]: [...(prevConversations[activeProfile] || []), userMessage],
       };
 
+    
       // Simulate bot response after a delay
       setTimeout(() => {
         const transformationFunction = getTransformationFunction(activeProfile);
@@ -36,19 +48,25 @@ function App() {
     });
   };
 
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   // Retrieve the transformation function for the active profile
   const getTransformationFunction = (profileName) => {
     switch (profileName) {
-      case 'Shadab':
+      case 'reverseText':
         return reverseText;
-      case 'Deependra':
+      case 'addUnderscores':
         return addUnderscores;
-      case 'Ankita':
+      case 'repeatText':
         return repeatText;
-      case 'Animesh':
+      case 'capitalizeFirstLetter':
         return capitalizeFirstLetter;
-      case 'Anmol':
+      case 'capitalizeText':
         return capitalizeText;
+      case 'randomTransformations':
+        return randomTransformations;
       default:
         return (text) => text; // Default: No transformation
     }
@@ -64,10 +82,25 @@ function App() {
         />
       </div>
 
-      <div className="chat-window">
+      <div className="chat-window" style={{backgroundColor: isDarkMode? 'black':'white'}}>
+        <div
+            style={{
+              position: 'absolute',
+              top: '20px',
+              right: '200px',
+              cursor: 'pointer',
+              fontSize: '30px'
+            }}
+            onClick={() => {
+              setIsDarkMode(!isDarkMode);}}
+          >
+            {isDarkMode ? '🌙' : '☀️'} {/* Moon for dark mode, Sun for light mode */}
+          </div>
+
+
         {activeProfile && (
           <>
-            <MessageList messages={conversations[activeProfile] || []} />
+            <MessageList messages={conversations[activeProfile] || []} botName={transformations[activeProfile]}/>
             <MessageInput onSubmit={handleSendMessage} />
           </>
         )}

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Message from './Message';
 
-const MessageList = ({ messages }) => {
+const MessageList = ({ messages, botName }) => {
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
@@ -10,10 +10,11 @@ const MessageList = ({ messages }) => {
     }
   }, [messages]);
 
+
   return (
     <div className="messages">
       {messages.map((message, index) => (
-        <Message key={index} text={message.text} sender={message.sender} />
+        <Message key={index} text={message.text} sender={message.sender} botName={botName} />
       ))}
       <div ref={messagesEndRef} />
     </div>

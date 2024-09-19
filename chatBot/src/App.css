@@ -31,7 +31,7 @@ html, body {
   flex-direction: column;
   box-shadow: none;
   overflow: hidden;
-  background: url('src/assets/black-background.jpg');
+  /* background: url('src/assets/black-background.jpg'); */
   background-size: cover;
 }
 
@@ -118,9 +118,11 @@ html, body {
 
 .left-container {
   width: 25%;
-  background-color: #121411;
+  background-color: #ced0ce;
 }
 
 .chat-window{
   width: 75%;
 }
+
+
