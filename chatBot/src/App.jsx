@@ -85,9 +85,9 @@ function App() {
       <div className="chat-window" style={{backgroundColor: isDarkMode? 'black':'white'}}>
         <div
             style={{
-              position: 'absolute',
-              top: '20px',
-              right: '200px',
+              position: 'absolute', 
+              top: '0px',
+              right: '1150px',
               cursor: 'pointer',
               fontSize: '30px'
             }}
