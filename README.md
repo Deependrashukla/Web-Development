@@ -42,18 +42,22 @@ Follow these steps to set up and run the project:
    ```
    git clone https://github.com/Deependrashukla/Web-Development.git
    ```
+2. **Switch to the master branch**:
+   ```
+   git checkout master
+   ```
 
-2. **Navigate to the Project Directory**:
+3. **Navigate to the Project Directory**:
    ```
    cd chatBot
    ```
 
-3. **Install Dependencies**:
+4. **Install Dependencies**:
    ```
    npm install
    ```
 
-4. **Start the Development Server**:
+5. **Start the Development Server**:
    ```
    npm run dev
    ```
