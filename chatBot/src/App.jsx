@@ -15,6 +15,7 @@ function App() {
 
     const userMessage = { sender: 'user', text: input };
 
+    // Update conversation with user message
     setConversations((prevConversations) => {
       const updatedConversations = {
         ...prevConversations,
@@ -27,11 +28,11 @@ function App() {
         const botMessage = { sender: 'bot', text: transformationFunction(input) };
         setConversations((prev) => ({
           ...prev,
-          [activeProfile]: [...(prev[activeProfile] || []), userMessage, botMessage],
+          [activeProfile]: [...(prev[activeProfile] || []), botMessage], // Add only bot's message
         }));
       }, 1000);
 
-      return updatedConversations;
+      return updatedConversations; // Return updated conversation with user message
     });
   };
 
@@ -59,6 +60,7 @@ function App() {
         <TransformationSelector
           setActiveProfile={setActiveProfile}
           setMessages={setConversations}
+          conversations={conversations}
         />
       </div>
 

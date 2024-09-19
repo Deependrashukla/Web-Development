@@ -6,15 +6,16 @@ import ankita from '../assets/ankita.png';
 import anmol from '../assets/anmol.png';
 import animesh from '../assets/animesh.png';
 
-function TransformationSelector({ setActiveProfile, setMessages }) {
+function TransformationSelector({ setActiveProfile, conversations }) {
 
   // Function to handle profile click
   const handleProfileClick = (name) => {
     setActiveProfile(name);
-    setMessages((prevConversations) => ({
-      ...prevConversations,
-      [name]: prevConversations[name] || []
-    }));
+  };
+
+  const getLastMessage = (name) => {
+    const messages = conversations[name] || [];
+    return messages.length > 0 ? messages[messages.length - 1].text : "No messages yet";
   };
 
   return (
@@ -23,11 +24,11 @@ function TransformationSelector({ setActiveProfile, setMessages }) {
         Choose to message with:
       </label>
 
-      <ChatProfile name="Shadab" pictureUrl={shadab} onClick={() => handleProfileClick("Shadab")} />
-      <ChatProfile name="Deependra" pictureUrl={deependra} onClick={() => handleProfileClick("Deependra")} />
-      <ChatProfile name="Ankita" pictureUrl={ankita} onClick={() => handleProfileClick("Ankita")} />
-      <ChatProfile name="Animesh" pictureUrl={animesh} onClick={() => handleProfileClick("Animesh")} />
-      <ChatProfile name="Anmol" pictureUrl={anmol} onClick={() => handleProfileClick("Anmol")} />
+      <ChatProfile name="Shadab" pictureUrl={shadab} onClick={() => handleProfileClick("Shadab")} lastMessage={getLastMessage("Shadab")} />
+      <ChatProfile name="Deependra" pictureUrl={deependra} onClick={() => handleProfileClick("Deependra")} lastMessage={getLastMessage("Deependra")} />
+      <ChatProfile name="Ankita" pictureUrl={ankita} onClick={() => handleProfileClick("Ankita")} lastMessage={getLastMessage("Ankita")} />
+      <ChatProfile name="Animesh" pictureUrl={animesh} onClick={() => handleProfileClick("Animesh")} lastMessage={getLastMessage("Animesh")} />
+      <ChatProfile name="Anmol" pictureUrl={anmol} onClick={() => handleProfileClick("Anmol")} lastMessage={getLastMessage("Anmol")} />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ChatProfile.css'; // Import the CSS file
 
-const ChatProfile = ({ name, pictureUrl, onClick, lastMessage = "No messages yet" }) => {
+const ChatProfile = ({ name, pictureUrl, onClick, lastMessage }) => {
   const [isSelected, setIsSelected] = useState(false);
 
   const handleClick = () => {
