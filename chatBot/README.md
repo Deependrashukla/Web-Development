@@ -7,11 +7,11 @@ This project is a React-based chat interface where users can interact with vario
 1. **User Input and Bot Responses**: Users can send messages, and one of six bots will reply with a transformed version of the message.
 
 2. **Multiple Bots with Unique Transformations**: The app features six different bots, each with its own text transformation:
-   - **CapitalCrusader**: Capitalize First Letter of each word.
-   - **ReverseMaster**: This bot flips the text backwards, like doing a backflip with words.
-   - **UnderscoreUndercover**: This bot sneaks underscores into the text, wherever it finds spaces.
-   - **EchoEnforcer**: This bot enforces repetition of text.
-   - **ShoutMaster**: This bot turns everything into uppercase.
+   - **Capitalize First Letter**: Capitalize First Letter of each word.
+   - **Reverse Text**: This bot flips the text backwards, like doing a backflip with words.
+   - **Add Underscore**: This bot sneaks underscores into the text, wherever it finds spaces.
+   - **Repeat Text**: This bot enforces repetition of text.
+   - **Capitalize Text**: This bot turns everything into uppercase.
    - **RandomBot**: Randomly applies one of the above transformations.
 
 3. **Simple, Intuitive UI**: The chat interface resembles modern chat apps and is styled to distinguish between user messages and bot responses.
