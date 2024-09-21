@@ -1,0 +1,15 @@
+
+
+button{
+  border-radius: 50px;
+  border: none;
+  
+}
+
+button:hover{
+  background-color: rgb(54, 117, 56);
+}
+
+body{
+  background-color: black;
+}

@@ -1,0 +1,42 @@
+.project {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column; /* Stack title and images vertically */
+    /* align-items: center;    Center the title and images horizontally */
+}
+
+#text {
+    margin-left: 80px;
+    color: white;
+    /* text-align: left;  */
+    margin-bottom: 20px;    /* Space between the title and the images */
+    margin-top: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.images {
+    display: flex;
+    justify-content: space-around;  /* Distribute images evenly */
+    width: 100%;                    /* Full width of the container */
+    gap: 20px;                      /* Gap between the image containers */
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;          /* Stack image and name vertically */
+    align-items: center;             /* Center the image and text */
+    /* text-align: center; */
+}
+
+.image-container img {
+    max-width: 100%;                 /* Ensure images are responsive */
+    height: auto;                    /* Maintain image aspect ratio */
+    border-radius: 10px;             /* Optional: Rounded corners */
+}
+
+.project-name {
+    margin-top: 10px;                /* Space between the image and project name */
+    font-size: 18px;                 /* Size of project name */
+    color: white;                    /* Text color */
+}
