@@ -1,0 +1,14 @@
+.text-header{
+    color: white;
+    padding: 80px;
+    /* padding-left: 80px;
+    padding-bottom: 30px; */
+    /* padding-top: 30px; */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.header{
+    background-color: black;
+    /* text-align: left; */
+    height: 40vh;
+}

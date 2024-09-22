@@ -1,0 +1,9 @@
+.customButton{
+    border-radius: 50px;
+    border: none;
+    
+  }
+
+.customButton:hover{
+    background-color: rgb(54, 117, 56);
+  }
