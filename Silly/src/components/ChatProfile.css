@@ -1,0 +1,37 @@
+.chat-profile {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(255, 255, 255); /* Default white background */
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .chat-profile:hover {
+    background-color: #c5b9b9; /* Light gray on hover */
+  }
+  
+  .chat-profile.selected {
+    background-color: rgba(208, 202, 202, 0.895); /* Red tone when selected */
+  }
+  
+  .chat-profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .chat-profile .name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .chat-profile .last-message {
+    font-size: 14px;
+    color: #555;
+  }
+  
