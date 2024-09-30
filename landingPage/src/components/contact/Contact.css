@@ -4,6 +4,8 @@
     border-radius: 8px; /* Rounded corners */
     margin: 0 auto; /* Center the container */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    /* width: 100%;
+    height: 100%; */
 }
 
 .contact-container h2 {
@@ -52,3 +54,4 @@
 .submit-button:hover {
     background-color: #218838; /* Darker green on hover */
 }
+
