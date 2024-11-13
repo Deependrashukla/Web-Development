@@ -1,0 +1,111 @@
+/* General Styles */
+
+/* Apply background to the entire page (affects all components) */
+body {
+  background: 
+      url('src/assets/backgorund.jpg'); /* Your background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'Arial', sans-serif; /* Set a default font for the body */
+}
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(45deg, #2ecc71, #3498db);
+  height: 100vh;
+  justify-content: space-between;
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+}
+
+.avatar img {
+  width: 80px;
+  height: 80px;
+}
+
+.date-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+}
+
+.date-info p {
+  margin: 5px 0;
+}
+
+/* Meal Buttons Section */
+.meal-buttons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+  margin: 20px 0;
+}
+
+.meal-btn {
+  background-color: #5a9c69;
+  color: white;
+  padding: 15px;
+  font-size: 20px;
+  border: none;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.meal-btn:hover {
+  background-color: #4a8b57;
+}
+
+/* Image Grid Section */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.image-item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+}
