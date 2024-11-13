@@ -1,0 +1,26 @@
+.custom-navbar {
+    /* position: relative; */
+    background-color: rgb(0, 0, 0);  /* Set background to true black */
+    /* border-color: black; */
+    display: flex;
+    color: white;
+  }
+  .customNavbar .navbar-brand {
+    color: rgb(255, 255, 255); 
+    /* padding: 20px; */
+  }
+
+  .resume{
+    margin-left: 30px;
+  }
+  
+  .home{
+    margin-right: 30px;
+    padding-left: 10px;
+    padding-left: 10px;
+  }
+
+  .me-auto span{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+  }

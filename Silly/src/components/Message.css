@@ -1,0 +1,33 @@
+.message.user {
+    padding-top: 0px;
+    align-self: flex-end;
+    background-color: #0036f9;
+    color: white;
+  }
+  
+  .message.bot {
+    align-self: flex-start;
+    background-color: #f86e05;
+    color: white;
+  }
+  
+  .messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto; /* Enable vertical scrolling */
+    display: flex;
+    flex-direction: column;
+  }
+  
+.message-time{
+  /* padding-top: 25px; */
+  padding-left: 20px;
+  font-size: 11px;
+}
+
+.bot-name{
+  color:rgb(0, 0, 0);
+  font-size: 13px;
+  font-family:sans-serif;
+  font-weight:500;
+}
