@@ -1,6 +1,7 @@
 # React Chat Bot Project
 
 This project is a React-based chat interface where users can interact with various text-transforming bots. The application mimics the look and feel of popular messaging platforms like Discord or Slack while demonstrating different text manipulation techniques.
+Here is the deployed link of chatbot: **https://silly-chat-bot.netlify.app**
 
 ## Features
 
