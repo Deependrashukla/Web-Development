@@ -1,8 +1,5 @@
-# React + Vite
+# Meal Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Weekly Meal Tracker Widget helps users plan and track meals for each day of the week, displaying daily calorie totals. It features an intuitive interface to add, edit, and delete meals with nutritional insights. Users can view a summary of meals, including total calories per day, and export their weekly plan. The widget integrates seamlessly into dashboards for personalized health tracking.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Here is the link of deployed widget on Netlify: https://meal-tracker-widget.netlify.app
